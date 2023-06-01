@@ -1,0 +1,208 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: system-ui;
+  line-height: 1;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  background-color: var(--clr-very-dark-blue);
+  color: var(--clr-white);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  width: min(27.5rem, 95%);
+  min-height: 100vh;
+  margin-inline: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --transition-time: 0.3s;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-accent: hsl(25, 97%, 53%);
+  --clr-light-gray: hsl(217, 12%, 63%);
+  --clr-medium-gray: hsl(216, 12%, 54%);
+  --clr-dark-blue: hsl(213, 19%, 18%);
+  --clr-very-dark-blue: hsl(216, 12%, 8%);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: var(--clr-accent);
+  padding: 0.75em 1.75em;
+  background-color: var(--clr-dark-blue);
+  border-radius: 1em;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.6);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.card {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: 2.9em;
+  border-radius: 2rem;
+  background-image: linear-gradient(135deg, var(--clr-dark-blue), hsl(222, 19%, 11%));
+  transition: opacity var(--transition-time) ease-in-out;
+}
+.card .img-star {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--clr-dark-blue);
+  margin: 0 0 2rem;
+}
+.card.fade {
+  opacity: 0;
+}
+.card.submitted {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  text-align: center;
+}
+.card.submitted img {
+  width: 50%;
+}
+
+.radio-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+input[type=radio] {
+  --size: 3.5em;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--clr-dark-blue);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  pointer-events: all;
+  transition: background-color var(--transition-time) ease-in-out;
+}
+input[type=radio]::before {
+  content: attr(value);
+  color: hsla(0, 0%, 100%, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: color var(--transition-time) ease-in-out;
+}
+input[type=radio]:hover {
+  background-color: var(--clr-accent);
+}
+input[type=radio]:hover::before {
+  color: var(--clr-white);
+}
+input[type=radio]:checked {
+  background-color: var(--clr-medium-gray);
+}
+input[type=radio]:checked::before {
+  color: var(--clr-white);
+}
+
+.btn-primary {
+  display: block;
+  color: inherit;
+  width: 100%;
+  background-color: var(--clr-accent);
+  font-size: 0.9rem;
+  padding: 1em;
+  border-radius: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  transition: color var(--transition-time) ease-in-out, background-color var(--transition-time) ease-in-out;
+}
+.btn-primary:hover {
+  color: var(--clr-accent);
+  background-color: var(--clr-white);
+}
+
+.invalid {
+  outline: 1px solid transparent;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% {
+    outline-color: red;
+    transform: translate(0);
+  }
+  20%, 60% {
+    transform: translate(-0.5rem);
+  }
+  40%, 80% {
+    transform: translate(0.5rem);
+  }
+}/*# sourceMappingURL=main.css.map */
